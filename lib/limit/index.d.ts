@@ -2,8 +2,8 @@
  * The limit query type. It contains the limit value.
  */
 export interface LimitQuery {
-    type: 'limit';
-    number: number;
+  type: 'limit'
+  number: number
 }
 /**
  * Creates a limit query object. It's used to paginate queries.
@@ -23,4 +23,4 @@ export interface LimitQuery {
  * @param number - The limit value
  * @returns The limit object
  */
-export declare function limit(number: number): LimitQuery;
+export declare function limit(number: number): LimitQuery

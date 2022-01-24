@@ -1,4 +1,4 @@
-import { Adaptor } from '../adaptor';
+import { Adaptor } from '../adaptor'
 /**
  * Converts Typesaurus data to Firestore format. It deeply traverse all the data and
  * converts values to compatible format.
@@ -6,7 +6,7 @@ import { Adaptor } from '../adaptor';
  * @param adaptor - the adaptor
  * @param data - the data to convert
  */
-export declare function unwrapData(adaptor: Adaptor, data: any): any;
+export declare function unwrapData(adaptor: Adaptor, data: any): any
 /**
  * Converts Firestore data to Typesaurus format. It deeply traverse all the
  * data and converts values to compatible format.
@@ -14,4 +14,4 @@ export declare function unwrapData(adaptor: Adaptor, data: any): any;
  * @param consts - the adaptor constants
  * @param data - the data to convert
  */
-export declare function wrapData(adaptor: Adaptor, data: unknown): unknown;
+export declare function wrapData(adaptor: Adaptor, data: unknown): unknown

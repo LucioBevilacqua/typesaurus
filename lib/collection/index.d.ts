@@ -2,8 +2,8 @@
  * The collection type. It contains the path in Firestore.
  */
 export interface Collection<_Model> {
-    __type__: 'collection';
-    path: string;
+  __type__: 'collection'
+  path: string
 }
 /**
  * Creates a collection object.
@@ -21,4 +21,4 @@ export interface Collection<_Model> {
  * @param path - The collection path
  * @returns The collection object
  */
-export declare function collection<Model>(path: string): Collection<Model>;
+export declare function collection<Model>(path: string): Collection<Model>

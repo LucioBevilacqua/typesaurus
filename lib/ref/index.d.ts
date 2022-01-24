@@ -1,12 +1,12 @@
-import { Adaptor } from '../adaptor';
-import { Collection } from '../collection';
+import { Adaptor } from '../adaptor'
+import { Collection } from '../collection'
 /**
  * The document reference type.
  */
 export interface Ref<Model> {
-    __type__: 'ref';
-    collection: Collection<Model>;
-    id: string;
+  __type__: 'ref'
+  collection: Collection<Model>
+  id: string
 }
 /**
  * Creates reference object to a document in given collection with given id.
@@ -42,26 +42,32 @@ export interface Ref<Model> {
  * @param id=RANDOM_ID - The document id; generated when not passed
  * @returns The reference object
  */
-export declare function ref<Model>(collection: Collection<Model>, id: string): Ref<Model>;
-export declare function id(): Promise<string>;
+export declare function ref<Model>(
+  collection: Collection<Model>,
+  id: string
+): Ref<Model>
+export declare function id(): Promise<string>
 /**
  * Generates Firestore path from a reference.
  *
  * @param ref - The reference to a document
  * @returns Firestore path
  */
-export declare function getRefPath(ref: Ref<any>): string;
+export declare function getRefPath(ref: Ref<any>): string
 /**
  * Creates Firestore document from a reference.
  *
  * @param ref - The reference to create Firestore document from
  * @returns Firestore document
  */
-export declare function refToFirestoreDocument<Model>({ firestore }: Adaptor, ref: Ref<Model>): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData>;
+export declare function refToFirestoreDocument<Model>(
+  { firestore }: Adaptor,
+  ref: Ref<Model>
+): FirebaseFirestore.DocumentReference
 /**
  * Creates a reference from a Firestore path.
  *
  * @param path - The Firestore path
  * @returns Reference to a document
  */
-export declare function pathToRef<Model>(path: string): Ref<Model>;
+export declare function pathToRef<Model>(path: string): Ref<Model>

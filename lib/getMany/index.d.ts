@@ -1,5 +1,5 @@
-import { Collection } from '../collection';
-import { Doc } from '../doc';
+import { Collection } from '../collection'
+import { Doc } from '../doc'
 /**
  * Retrieves multiple documents from a collection.
  *
@@ -24,4 +24,8 @@ import { Doc } from '../doc';
  *
  * @returns Promise to a list of found documents
  */
-export default function getMany<Model>(collection: Collection<Model>, ids: readonly string[], onMissing?: ((id: string) => Model) | 'ignore'): Promise<Doc<Model>[]>;
+export default function getMany<Model>(
+  collection: Collection<Model>,
+  ids: readonly string[],
+  onMissing?: ((id: string) => Model) | 'ignore'
+): Promise<Doc<Model>[]>

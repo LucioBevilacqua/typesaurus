@@ -19,7 +19,7 @@ export type AdaptorFirestore = () => admin.firestore.Firestore
 export type AdaptorConsts = {
   DocumentReference: typeof admin.firestore.DocumentReference
   Timestamp: typeof admin.firestore.Timestamp
-  GeoPoint: typeof admin.firestore.GeoPoint,
+  GeoPoint: typeof admin.firestore.GeoPoint
   FieldPath: typeof admin.firestore.FieldPath
   FieldValue: typeof admin.firestore.FieldValue
 }

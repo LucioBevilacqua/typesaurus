@@ -1,6 +1,6 @@
-import { Collection } from '../collection';
-import { Doc } from '../doc';
-import { CollectionGroup } from '../group';
+import { Collection } from '../collection'
+import { Doc } from '../doc'
+import { CollectionGroup } from '../group'
 /**
  * Returns all documents in a collection.
  *
@@ -23,4 +23,6 @@ import { CollectionGroup } from '../group';
  * @param collection - The collection to get all documents from
  * @returns A promise to all documents
  */
-export default function all<Model>(collection: Collection<Model> | CollectionGroup<Model>): Promise<Doc<Model>[]>;
+export default function all<Model>(
+  collection: Collection<Model> | CollectionGroup<Model>
+): Promise<Doc<Model>[]>

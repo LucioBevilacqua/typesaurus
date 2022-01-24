@@ -1,5 +1,4 @@
-declare class DocId {
-}
+declare class DocId {}
 /**
  * A special sentinel to refer to the ID of a document.
  * It can be used in queries to sort or filter by the document ID.
@@ -19,6 +18,6 @@ declare class DocId {
  * })
  * ```
  */
-declare const docId: DocId;
-declare type typeofDocId = string;
-export { DocId, docId, typeofDocId };
+declare const docId: DocId
+declare type typeofDocId = string
+export { DocId, docId, typeofDocId }

@@ -1,14 +1,17 @@
-import { Collection } from '../collection';
-import { Doc } from '../doc';
-import { CollectionGroup } from '../group';
-import { LimitQuery } from '../limit';
-import { OrderQuery } from '../order';
-import { WhereQuery } from '../where';
-import { SnapshotInfo } from '../snapshot';
+import { Collection } from '../collection'
+import { Doc } from '../doc'
+import { CollectionGroup } from '../group'
+import { LimitQuery } from '../limit'
+import { OrderQuery } from '../order'
+import { WhereQuery } from '../where'
+import { SnapshotInfo } from '../snapshot'
 /**
  * The query type.
  */
-export declare type Query<Model, Key extends keyof Model> = OrderQuery<Model, Key> | WhereQuery<Model> | LimitQuery;
+export declare type Query<Model, Key extends keyof Model> =
+  | OrderQuery<Model, Key>
+  | WhereQuery<Model>
+  | LimitQuery
 /**
  * Subscribes to a collection query built using query objects ({@link order | order}, {@link where | where}, {@link limit | limit}).
  *
@@ -38,4 +41,9 @@ export declare type Query<Model, Key extends keyof Model> = OrderQuery<Model, Ke
  * @param onError - The function is called with error when request fails.
  * @returns Function that unsubscribes the listener from the updates
  */
-export default function onQuery<Model>(collection: Collection<Model> | CollectionGroup<Model>, queries: Query<Model, keyof Model>[], onResult: (docs: Doc<Model>[], info: SnapshotInfo<Model>) => any, onError?: (err: Error) => any): () => void;
+export default function onQuery<Model>(
+  collection: Collection<Model> | CollectionGroup<Model>,
+  queries: Query<Model, keyof Model>[],
+  onResult: (docs: Doc<Model>[], info: SnapshotInfo<Model>) => any,
+  onError?: (err: Error) => any
+): () => void

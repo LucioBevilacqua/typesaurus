@@ -1,7 +1,7 @@
-import { Collection } from '../collection';
-import { Doc } from '../doc';
-import { CollectionGroup } from '../group';
-import { SnapshotInfo } from '../snapshot';
+import { Collection } from '../collection'
+import { Doc } from '../doc'
+import { CollectionGroup } from '../group'
+import { SnapshotInfo } from '../snapshot'
 /**
  * Subscribes to all documents in a collection.
  *
@@ -26,4 +26,8 @@ import { SnapshotInfo } from '../snapshot';
  * the initial fetch is resolved or the collection updates.
  * @param onError - The function is called with error when request fails.
  */
-export default function onAll<Model>(collection: Collection<Model> | CollectionGroup<Model>, onResult: (docs: Doc<Model>[], info: SnapshotInfo<Model>) => any, onError?: (error: Error) => any): () => void;
+export default function onAll<Model>(
+  collection: Collection<Model> | CollectionGroup<Model>,
+  onResult: (docs: Doc<Model>[], info: SnapshotInfo<Model>) => any,
+  onError?: (error: Error) => any
+): () => void

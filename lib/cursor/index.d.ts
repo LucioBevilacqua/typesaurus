@@ -1,15 +1,19 @@
-import { Doc } from '../doc';
-import { typeofDocId } from '../docId';
+import { Doc } from '../doc'
+import { typeofDocId } from '../docId'
 /**
  * Available cursor methods.
  */
-export declare type CursorMethod = 'startAfter' | 'startAt' | 'endBefore' | 'endAt';
+export declare type CursorMethod =
+  | 'startAfter'
+  | 'startAt'
+  | 'endBefore'
+  | 'endAt'
 /**
  * The cursor interface, holds the method and the value for pagination.
  */
 export interface Cursor<Model, Key extends keyof Model> {
-    method: CursorMethod;
-    value: Model[Key] | Doc<Model> | typeofDocId | undefined;
+  method: CursorMethod
+  value: Model[Key] | Doc<Model> | typeofDocId | undefined
 }
 /**
  * Start the query results after the given value.
@@ -30,7 +34,9 @@ export interface Cursor<Model, Key extends keyof Model> {
  * @param value - The value to end the query results after
  * @returns The cursor object
  */
-export declare function startAfter<Model, Key extends keyof Model>(value: Model[Key] | Doc<Model> | typeofDocId | undefined): Cursor<Model, Key>;
+export declare function startAfter<Model, Key extends keyof Model>(
+  value: Model[Key] | Doc<Model> | typeofDocId | undefined
+): Cursor<Model, Key>
 /**
  * Start the query results on the given value.
  *
@@ -50,7 +56,9 @@ export declare function startAfter<Model, Key extends keyof Model>(value: Model[
  * @param value - The value to start the query results at
  * @returns The cursor object
  */
-export declare function startAt<Model, Key extends keyof Model>(value: Model[Key] | Doc<Model> | typeofDocId | undefined): Cursor<Model, Key>;
+export declare function startAt<Model, Key extends keyof Model>(
+  value: Model[Key] | Doc<Model> | typeofDocId | undefined
+): Cursor<Model, Key>
 /**
  * Ends the query results before the given value.
  *
@@ -70,7 +78,9 @@ export declare function startAt<Model, Key extends keyof Model>(value: Model[Key
  * @param value - The value to end the query results before
  * @returns The cursor object
  */
-export declare function endBefore<Model, Key extends keyof Model>(value: Model[Key] | Doc<Model> | typeofDocId | undefined): Cursor<Model, Key>;
+export declare function endBefore<Model, Key extends keyof Model>(
+  value: Model[Key] | Doc<Model> | typeofDocId | undefined
+): Cursor<Model, Key>
 /**
  * Ends the query results on the given value.
  *
@@ -90,4 +100,6 @@ export declare function endBefore<Model, Key extends keyof Model>(value: Model[K
  * @param value - The value to end the query results at
  * @returns The cursor object
  */
-export declare function endAt<Model, Key extends keyof Model>(value: Model[Key] | Doc<Model> | typeofDocId | undefined): Cursor<Model, Key>;
+export declare function endAt<Model, Key extends keyof Model>(
+  value: Model[Key] | Doc<Model> | typeofDocId | undefined
+): Cursor<Model, Key>

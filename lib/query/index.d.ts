@@ -1,13 +1,16 @@
-import { Collection } from '../collection';
-import { Doc } from '../doc';
-import { WhereQuery } from '../where';
-import { OrderQuery } from '../order';
-import { LimitQuery } from '../limit';
-import { CollectionGroup } from '../group';
+import { Collection } from '../collection'
+import { Doc } from '../doc'
+import { WhereQuery } from '../where'
+import { OrderQuery } from '../order'
+import { LimitQuery } from '../limit'
+import { CollectionGroup } from '../group'
 /**
  * The query type.
  */
-export declare type Query<Model, Key extends keyof Model> = OrderQuery<Model, Key> | WhereQuery<Model> | LimitQuery;
+export declare type Query<Model, Key extends keyof Model> =
+  | OrderQuery<Model, Key>
+  | WhereQuery<Model>
+  | LimitQuery
 /**
  * Queries passed collection using query objects ({@link order}, {@link where}, {@link limit}).
  *
@@ -34,4 +37,7 @@ export declare type Query<Model, Key extends keyof Model> = OrderQuery<Model, Ke
  * @param queries - The query objects
  * @returns The promise to the query results
  */
-export declare function query<Model>(collection: Collection<Model> | CollectionGroup<Model>, queries: Query<Model, keyof Model>[]): Promise<Doc<Model>[]>;
+export declare function query<Model>(
+  collection: Collection<Model> | CollectionGroup<Model>,
+  queries: Query<Model, keyof Model>[]
+): Promise<Doc<Model>[]>

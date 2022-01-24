@@ -1,5 +1,7 @@
-import * as testing from '@firebase/testing';
-declare type App = ReturnType<typeof testing.initializeTestApp> | ReturnType<typeof testing.initializeAdminApp>;
+import * as testing from '@firebase/testing'
+declare type App =
+  | ReturnType<typeof testing.initializeTestApp>
+  | ReturnType<typeof testing.initializeAdminApp>
 /**
  * Injects @firebase/testing adaptod instead of firebase-admin and set the given
  * app to be used for Firestore operations.
@@ -27,7 +29,7 @@ declare type App = ReturnType<typeof testing.initializeTestApp> | ReturnType<typ
  *
  * @param app - The testing app instance
  */
-export declare function injectTestingAdaptor(app: App): void;
+export declare function injectTestingAdaptor(app: App): void
 /**
  * Sets the given app to be used for Firestore operations. Must be used after
  * calling `injectTestingAdaptor`.
@@ -55,5 +57,5 @@ export declare function injectTestingAdaptor(app: App): void;
  *
  * @param app - The testing app instance
  */
-export declare function setApp(app: App): void;
-export {};
+export declare function setApp(app: App): void
+export {}

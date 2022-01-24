@@ -1,20 +1,20 @@
-import { Ref } from '../ref';
+import { Ref } from '../ref'
 /**
  * The document type. It contains the reference in the DB and the model data.
  */
 export interface Doc<Model> {
-    __type__: 'doc';
-    data: Model;
-    ref: Ref<Model>;
-    meta: Metadata | undefined;
+  __type__: 'doc'
+  data: Model
+  ref: Ref<Model>
+  meta: Metadata | undefined
 }
 /**
  * The document metadata type. Exists only in the web environment.
  */
 export declare type Metadata = {
-    fromCache: boolean;
-    hasPendingWrites: boolean;
-};
+  fromCache: boolean
+  hasPendingWrites: boolean
+}
 /**
  * Creates a document object.
  *
@@ -40,4 +40,8 @@ export declare type Metadata = {
  * @param data - The model data
  * @returns The document object
  */
-export declare function doc<Model>(ref: Ref<Model>, data: Model, meta?: Metadata | undefined): Doc<Model>;
+export declare function doc<Model>(
+  ref: Ref<Model>,
+  data: Model,
+  meta?: Metadata | undefined
+): Doc<Model>

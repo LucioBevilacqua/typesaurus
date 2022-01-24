@@ -1,7 +1,7 @@
-import { Collection } from '../collection';
-import { Doc } from '../doc';
-declare type OnResult<Model> = (doc: Doc<Model>[]) => any;
-declare type OnError = (error: Error) => any;
+import { Collection } from '../collection'
+import { Doc } from '../doc'
+declare type OnResult<Model> = (doc: Doc<Model>[]) => any
+declare type OnError = (error: Error) => any
 /**
  * Subscribes to multiple documents from a collection.
  *
@@ -27,5 +27,10 @@ declare type OnError = (error: Error) => any;
  *
  * @returns Function that unsubscribes the listener from the updates
  */
-declare function onGetMany<Model>(collection: Collection<Model>, ids: readonly string[], onResult: OnResult<Model>, onError?: OnError): () => void;
-export default onGetMany;
+declare function onGetMany<Model>(
+  collection: Collection<Model>,
+  ids: readonly string[],
+  onResult: OnResult<Model>,
+  onError?: OnError
+): () => void
+export default onGetMany
